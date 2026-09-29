@@ -46,9 +46,9 @@ NOTE: the answer can be found from the same events, using the previous query
 
 
 <h1>2.1 In Level 1, you found the staging server domain name (used to host the defacement file). Find that server's IP adddress.</h1>
-<h2>ANSWER: prankglassinebracket.jumpingcrab.com</h2>
+<h2>ANSWER: 23.22.63.114</h2>
 <img width="1901" height="927" alt="image" src="https://github.com/user-attachments/assets/83abc6f7-3462-410d-a056-56fc22b3b73e" /><br>
-NOTE: the staging server's IP address can be found in the same query and events used in 1.4 & 1.5
+NOTE: the staging server's IP address can be found in the same query and events used in 1.4 & 1.5 on the dest_ip field
 
 
 
