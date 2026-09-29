@@ -27,8 +27,13 @@ NOTE: add the website name in the query, and check the dest_ip field to find the
 <img width="581" height="226" alt="image" src="https://github.com/user-attachments/assets/217b8bfd-434d-496e-913a-a28975ad3a93" /><br><br>
 
 
-<h1>Find the name of the file used to deface the web server serving "imreallynotbatman.com".</h1>
-ANSWER: poisonivy-is-coming-for-you-batman.jpeg
+<h1>1.4 Find the name of the file used to deface the web server serving "imreallynotbatman.com".</h1>
+ANSWER: poisonivy-is-coming-for-you-batman.jpeg<br>
+<img width="395" height="24" alt="image" src="https://github.com/user-attachments/assets/e823a08b-e596-4788-b160-3349519dd142" /><br>
+NOTE: we can continue from the src_type=stream:http<br>
+<img width="596" height="316" alt="image" src="https://github.com/user-attachments/assets/7f1f1707-fe39-4ef3-8e47-fb6125bdb952" /><br>
+NOTE: check for src_ip to narrow the attackers, notice the web server's IP is included which is a red flag. Web servers are supposed to be passive and just responds, not the one that initiates>br>
+
 
 
 
