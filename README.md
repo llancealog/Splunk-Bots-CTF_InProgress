@@ -17,14 +17,18 @@ NOTE: in the interesting fields section, notice that the specific uri path has a
 <h1>1.2 Find the attacker’s IP address</h1>
 ANSWER: 40.80.148.42<br>
 <img width="585" height="226" alt="image" src="https://github.com/user-attachments/assets/688e9f61-d1b3-4f50-817d-5175442d9532" /><br>
-NOTE: based on the previous query, inspecting the src_ip field confirms where the traffic originated from.<br>
+NOTE: based on the previous query, inspecting the src_ip field confirms where the traffic originated from.<br><br>
 
 
 <h1>1.3 Find the IP address of the web server serving "imreallynotbatman.com".</h1>
 ANSWER: 192.168.250.70<br>
 <img width="488" height="28" alt="image" src="https://github.com/user-attachments/assets/b0461239-1b7d-46b9-8043-e034cdb261eb" /><br>
 NOTE: add the website name in the query, and check the dest_ip field to find the IP hosting the site<br>
-<img width="581" height="226" alt="image" src="https://github.com/user-attachments/assets/217b8bfd-434d-496e-913a-a28975ad3a93" /><br>
+<img width="581" height="226" alt="image" src="https://github.com/user-attachments/assets/217b8bfd-434d-496e-913a-a28975ad3a93" /><br><br>
+
+
+<h1>Find the name of the file used to deface the web server serving "imreallynotbatman.com".</h1>
+ANSWER: poisonivy-is-coming-for-you-batman.jpeg
 
 
 
