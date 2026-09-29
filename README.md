@@ -32,7 +32,12 @@ ANSWER: poisonivy-is-coming-for-you-batman.jpeg<br>
 <img width="395" height="24" alt="image" src="https://github.com/user-attachments/assets/e823a08b-e596-4788-b160-3349519dd142" /><br>
 NOTE: we can continue from the src_type=stream:http<br>
 <img width="596" height="316" alt="image" src="https://github.com/user-attachments/assets/7f1f1707-fe39-4ef3-8e47-fb6125bdb952" /><br>
-NOTE: check for src_ip to narrow the attackers, notice the web server's IP is included which is a red flag. Web servers are supposed to be passive and just responds, not the one that initiates>br>
+NOTE: check for src_ip to narrow the attackers, notice the web server's IP is included which is a red flag. Web servers are supposed to be passive and just responds, not the one that initiates><br>
+<img width="552" height="23" alt="image" src="https://github.com/user-attachments/assets/0c18163b-4145-4473-924d-079a2a5cb556" /><br>
+NOTE: add the server's IP as the src_ip in your query, to cut down on fields displayed<br>
+<img width="518" height="260" alt="image" src="https://github.com/user-attachments/assets/8373666e-757a-4320-a92f-1a2b772632fc" /><br>
+NOTE: check the packets and relevant fields such as the uri and the src_headers (contains the initiator's request)
+
 
 
 
