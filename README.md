@@ -1,7 +1,7 @@
 # Splunk-Bots-CTF V1
 
 <h1>1.1 Find the brand name of the vulnerability scanner.</h1>
-<h2>ANSWER: Acunetix Web Vulnerability Scanner</h2><br>
+<h2>ANSWER: Acunetix Web Vulnerability Scanner</h2>
 First contact (2016-08-10 14:36:48.122)<br>
 Last contact (2016-08-10 15:22:27.612)<br>
 source: 40.80.148.42<br>
