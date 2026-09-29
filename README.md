@@ -67,6 +67,16 @@ NOTE: with http credentials are often in plaintext and are unsecured, in this ca
 NOTE: based on the info found in form_data and http_user_agents the IP 23.22.63.114 appears to be the malicious attacker conducting the bruteforce attempts<br><br>
 
 
+<h1>2.4 Find the name of the executable file the attacker uploaded to the server".</h1>
+<h2>ANSWER: 3791.exe</h2>
+<img width="622" height="36" alt="image" src="https://github.com/user-attachments/assets/edef8887-6ddc-47c6-a644-4350a6404a52" /><br>
+NOTE: check the packets or fields for relevant info<br>
+<img width="585" height="256" alt="image" src="https://github.com/user-attachments/assets/25366177-1092-4429-9198-5d145e4b2e97" /><br>
+NOTE: in http art_filename field extracts names of files sent over the network 
+
+
+
+
 
 
 
