@@ -45,14 +45,31 @@ NOTE: check the packets and relevant fields such as the uri and the src_headers 
 NOTE: the answer can be found from the same events, using the previous query<br><br>
 
 
-<h1>2.1 In Level 1, you found the staging server domain name (used to host the defacement file). Find that server's IP adddress.</h1>
+<h1>2.1 In Level 1, you found the staging server domain name (used to host the defacement file). Find that server's IP address.</h1>
 <h2>ANSWER: 23.22.63.114</h2>
 <img width="1901" height="927" alt="image" src="https://github.com/user-attachments/assets/83abc6f7-3462-410d-a056-56fc22b3b73e" /><br>
-NOTE: the staging server's IP address can be found in the same query and events used in 1.4 & 1.5 on the dest_ip field<br><br>
+NOTE: the staging server's IP address can be mapped directly to the domain name found with the same query and events used in 1.4 & 1.5 on the dest_ip field<br><br>
 
 
-<h1>Find the IP address performing a brute force attack against "imreallynotbatman.com".</h1>
+<h1>2.3 Find the IP address performing a brute force attack against "imreallynotbatman.com".</h1>
 <h2>ANSWER: 23.22.63.114</h2>
+<img width="444" height="23" alt="image" src="https://github.com/user-attachments/assets/d4521223-df72-4c95-9340-28fbf1507dfd" /><br>
+NOTE: adjust the query to include the dest_ip which is the target of the brute force attack<br>
+<img width="598" height="481" alt="image" src="https://github.com/user-attachments/assets/4f537eec-e611-4f0f-85fa-b4bc5baf3aaa" /><br>
+NOTE: check the uri/url and go to the login/admin section of the site
+<img width="828" height="25" alt="image" src="https://github.com/user-attachments/assets/14b7ef98-bf13-4efe-b172-02c4ccc80f63" /><br>
+NOTE: since its login page, filter for POST method<br>
+<img width="1919" height="946" alt="image" src="https://github.com/user-attachments/assets/bf26d568-dead-4c14-a6cd-dd7f101289be" /><br>
+NOTE: table can be an effective way to show the data cleanly and assess the time for potential signs of bruteforce attempts<br>
+NOTE: some cases user agents can show automated scripts or programs if not spoofed properly which can be an indicator of attack<br>
+<img width="1904" height="865" alt="image" src="https://github.com/user-attachments/assets/514e3cad-ed5b-4a2b-bde3-256a58d401c6" /><br>
+NOTE: with http credentials are often in plaintext and are unsecured, in this case the field form_data holds the information of the attempts
+
+
+
+
+
+
 
 
 
