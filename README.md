@@ -39,6 +39,8 @@ NOTE: add the server's IP as the src_ip in your query, to cut down on fields dis
 NOTE: check the packets and relevant fields such as the uri and the src_headers (contains the initiator's request)
 
 
+<h1>1.5 Find the fully qualified domain name (FQDN) used by the staging server hosting the defacement file.</h1>
+<h2>ANSWER: poisonivy-is-coming-for-you-batman.jpeg</h2>
 
 
 
