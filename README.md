@@ -15,4 +15,6 @@ NOTE: in the interesting fields section, notice that the specific uri path has a
 
 
 <h1>1.2 Find the attacker’s IP address</h1>
-ANSWER: 40.80.148.42
+ANSWER: 40.80.148.42<br>
+<img width="585" height="226" alt="image" src="https://github.com/user-attachments/assets/688e9f61-d1b3-4f50-817d-5175442d9532" /><br>
+Note: we can continue from the prior query, check the src_ip from there
