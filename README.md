@@ -14,6 +14,5 @@ NOTE: in the interesting fields section, notice that the specific uri path has a
 <img width="1431" height="438" alt="image" src="https://github.com/user-attachments/assets/b584e7b7-fa37-45f2-8775-a138e7609ccf" /><br>
 
 
-
-
 <h1>1.2 Find the attacker’s IP address</h1>
+ANSWER: 40.80.148.42
