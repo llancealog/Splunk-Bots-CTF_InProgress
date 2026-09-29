@@ -62,7 +62,7 @@ NOTE: since its login page, filter for POST method<br>
 <img width="1919" height="946" alt="image" src="https://github.com/user-attachments/assets/bf26d568-dead-4c14-a6cd-dd7f101289be" /><br>
 NOTE: table can be an effective way to show the data cleanly and assess the time for potential signs of bruteforce attempts<br>
 NOTE: some cases user agents can show automated scripts or programs if not spoofed properly which can be an indicator of attack<br>
-<img width="1904" height="865" alt="image" src="https://github.com/user-attachments/assets/514e3cad-ed5b-4a2b-bde3-256a58d401c6" /><br>
+<img width="1904" height="945" alt="image" src="https://github.com/user-attachments/assets/c5f56fba-e9f3-4ebe-8e39-b3d4d3fc5468" /><br>
 NOTE: with http credentials are often in plaintext and are unsecured, in this case the field form_data holds the information of the attempts<br>
 NOTE: based on the info found in form_data and http_user_agents the IP 23.22.63.114 appears to be the malicious attacker conducting the bruteforce attempts<br><br>
 
