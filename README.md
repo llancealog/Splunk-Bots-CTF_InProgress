@@ -40,7 +40,9 @@ NOTE: check the packets and relevant fields such as the uri and the src_headers 
 
 
 <h1>1.5 Find the fully qualified domain name (FQDN) used by the staging server hosting the defacement file.</h1>
-<h2>ANSWER: poisonivy-is-coming-for-you-batman.jpeg</h2>
+<h2>ANSWER: prankglassinebracket.jumpingcrab.com</h2>
+<img width="524" height="68" alt="image" src="https://github.com/user-attachments/assets/d4c15369-15e9-49d3-88df-073e958f238f" /><br>
+NOTE: the answer can be found from the alerts, using the previous query
 
 
 
