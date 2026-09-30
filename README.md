@@ -78,6 +78,9 @@ NOTE: in http part_filename field extracts names of files sent over the network,
 <h1>3.1 In Level 2, you found the name of an executable file the attackers uploaded to the server. Find that file's MD5 hash.</h1>
 <h2>ANSWER: 59A1D4FACD7B333F76C4142CD42D3ABA</h2><br>
 <img width="650" height="20" alt="image" src="https://github.com/user-attachments/assets/f49f35fe-c5e4-4d68-8e37-421ba10d18d4" /><br>
+NOTE: file hashes and other relevant information related to the file can be checked in the XMLWinEventLog, so filter the source type in the relevant field.<br>
+<img width="1619" height="154" alt="image" src="https://github.com/user-attachments/assets/5f4877cc-a2c3-4c68-a6ad-5032508966f8" /><br>
+NOTE: after filtering the query check sample events for the hash info
 
 
                                               
