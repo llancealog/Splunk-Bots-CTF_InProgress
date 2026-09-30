@@ -75,8 +75,12 @@ NOTE: check the packets or fields for relevant info<br>
 NOTE: in http part_filename field extracts names of files sent over the network, this can be relevant for future queries when you want to check if there are any uploaded files via http
 
 
+<h1>3.1 In Level 2, you found the name of an executable file the attackers uploaded to the server. Find that file's MD5 hash.</h1>
+<h2>ANSWER: 59A1D4FACD7B333F76C4142CD42D3ABA</h2><br>
+<img width="650" height="20" alt="image" src="https://github.com/user-attachments/assets/f49f35fe-c5e4-4d68-8e37-421ba10d18d4" /><br>
 
 
+                                              
 
 
 
