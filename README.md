@@ -86,7 +86,7 @@ NOTE: after filtering the query check sample events for the hash info<br><br>
 <h1>3.2What was the first brute force password used?</h1>
 <h2>ANSWER: 12345678&9d873c2becd118318849d13cf18b60ff=1</h2>
 <img width="1898" height="828" alt="image" src="https://github.com/user-attachments/assets/974925c8-551c-497d-b501-ae2b2a28f258" /><br>
-NOTE: filter the query and format data into table similar to 
+NOTE: filter the query and format data into table similar to 2.3, then filter the time to start from the earliest<br><br>
 
                                           
 
