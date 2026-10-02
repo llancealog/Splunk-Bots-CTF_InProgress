@@ -95,7 +95,10 @@ NOTE: filter the query and format data into table similar to 2.3, then filter th
 NOTE: add an additional filter username=* to follow the common form_data format that was done on the login bruteforce attempts, then check near the end of the login attempts identifying a different src_ip and http user agent <br><br>
 
                                           
-
+<h1>3.4 How many seconds elapsed between the time the brute force password scan identified the correct password and the compromised login? Round to 2 decimal places.</h1>
+<h2>ANSWER: 92.17 secs</h2>
+<img width="1905" height="352" alt="image" src="https://github.com/user-attachments/assets/0c7d71bb-1542-4736-9635-64729a817569" /><br>
+NOTE: since we know the password is batman we can add that to the query to filter out the instances where the password batman was used<br><br> 
 
 
 
