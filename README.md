@@ -80,10 +80,10 @@ NOTE: in http part_filename field extracts names of files sent over the network,
 <img width="650" height="20" alt="image" src="https://github.com/user-attachments/assets/f49f35fe-c5e4-4d68-8e37-421ba10d18d4" /><br>
 NOTE: file hashes and other relevant information related to the file can be checked in the XMLWinEventLog, so filter the source type in the relevant field.<br>
 <img width="1622" height="202" alt="image" src="https://github.com/user-attachments/assets/1c8055c8-c046-4ec7-ad4e-3cb742636b2b" /><br>
-NOTE: after filtering the query check sample events for the hash info
+NOTE: after filtering the query check sample events for the hash info<br><br>
 
 
-
+<h1>3.2What was the first brute force password used?</h1>
                                           
 
 
