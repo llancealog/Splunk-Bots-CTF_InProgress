@@ -106,7 +106,7 @@ NOTE: since we know the password is batman we can add that to the query to filte
 <img width="767" height="94" alt="image" src="https://github.com/user-attachments/assets/20b1ce06-e385-435b-9d97-9cd66145ba49" /><br>
 NOTE: to only capture the passwd field we can create a new field or use regex, in this case we will use regex since creating new fields isnt allowed in the splunk shared account. <br>
 the syntax follows the | rex field=source_field "(extracted_fieldname[pattern])"<br>
-the source field in this case is the form data where we will extract the passwd, the extracted field name can be the passwd or password, and the pattern is simply how the syntax would be extracted<br>
+the source field in this case is the form data where we will extract the passwd, the extracted field name can be the passwd or password, and the pattern is simply how the syntax would be extracted<br><br>
 - passwd=...(the command outside the parentheses which tells splunk to only start extraction after encountering the string of characters "passwd=" ), <br>
 - Regex Syntax Breakdown (`passwd=(?<password>[^&]+)`)<br>
 
