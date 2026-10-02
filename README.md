@@ -104,12 +104,11 @@ NOTE: since we know the password is batman we can add that to the query to filte
 <h1>3.5 How many unique passwords were attempted in the brute force attack?</h1>
 <h2>ANSWER: 412</h2>
 <img width="767" height="94" alt="image" src="https://github.com/user-attachments/assets/20b1ce06-e385-435b-9d97-9cd66145ba49" /><br>
-NOTE: to only capture the passwd field we can create a new field or use regex, in this case we will use regex since creating new fields isnt allowed in the splunk shared account. <br>
-the syntax follows the | rex field=source_field "(extracted_fieldname[pattern])"<br>
-the source field in this case is the form data where we will extract the passwd, the extracted field name can be the passwd or password, and the pattern is simply how the syntax would be extracted<br><br>
-&bull; passwd=...(the command outside the parentheses which tells splunk to only start extraction after encountering the string of characters "passwd=" ), <br>
-- Regex Syntax Breakdown (`passwd=(?<password>[^&]+)`)<br>
-
+&bull;to only capture the passwd field we can create a new field or use regex, in this case we will use regex since creating new fields isnt allowed in the splunk shared account. <br>
+&bull;the syntax follows the | rex field=source_field "(extracted_fieldname[pattern])"<br>
+&bull;the source field in this case is the form data where we will extract the passwd, the extracted field name can be the passwd or password, and the pattern is simply how the syntax would be extracted<br><br>
+&bull;Regex Syntax Breakdown (`passwd=(?<password>[^&]+)`)<br>
+  
 **`passwd=`** — Literal match outside the group that anchors where the extraction begins. <br>
 **`(?<password>...)`** — Named capture group. The `?` signals an extended regex group, and `<password>` assigns the captured text to a new field named `password`. <br>
 **`[^&]`** — Negated character class (`^` inside brackets means NOT). Matches any character except an ampersand (`&`). <br>
