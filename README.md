@@ -109,10 +109,10 @@ destination: 192.168.250.70 | 192.168.250.40<br>
 &bull; the source field in this case is the form data where we will extract the passwd, the extracted field name can be the passwd or password, and the pattern is simply how the syntax would be extracted<br><br>
 &bull; Regex Syntax Breakdown (`passwd=(?<password>[^&]+)`)<br>
   
-**`passwd=`** — Literal match outside the group that anchors where the extraction begins. <br>
-**`(?<password>...)`** — Named capture group. The `?` signals an extended regex group, and `<password>` assigns the captured text to a new field named `password`. <br>
-**`[^&]`** — Negated character class (`^` inside brackets means NOT). Matches any character except an ampersand (`&`). <br>
-**`+`** — Quantifier meaning "1 or more times". Consumes all non-`&` characters in sequence until hitting the delimiter. <br>
+&bull; **`passwd=`** — Literal match outside the group that anchors where the extraction begins. <br>
+&bull; **`(?<password>...)`** — Named capture group. The `?` signals an extended regex group, and `<password>` assigns the captured text to a new field named `password`. <br>
+&bull; **`[^&]`** — Negated character class (`^` inside brackets means NOT). Matches any character except an ampersand (`&`). <br>
+&bull; **`+`** — Quantifier meaning "1 or more times". Consumes all non-`&` characters in sequence until hitting the delimiter. <br>
 
 
 
