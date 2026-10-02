@@ -110,10 +110,10 @@ the source field in this case is the form data where we will extract the passwd,
 *passwd=(the command outside the parentheses which tells splunk to only start extraction after encountering the string of characters "passwd=" ), <br>
 **Regex Syntax Breakdown (`passwd=(?<password>[^&]+)`):**
 
-- **`passwd=`** — Literal match outside the group that anchors where the extraction begins.
-- **`(?<password>...)`** — Named capture group. The `?` signals an extended regex group, and `<password>` assigns the captured text to a new field named `password`.
-- **`[^&]`** — Negated character class (`^` inside brackets means NOT). Matches any character except an ampersand (`&`).
-- **`+`** — Quantifier meaning "1 or more times". Consumes all non-`&` characters in sequence until hitting the delimiter.
+**`passwd=`** — Literal match outside the group that anchors where the extraction begins.
+**`(?<password>...)`** — Named capture group. The `?` signals an extended regex group, and `<password>` assigns the captured text to a new field named `password`.
+**`[^&]`** — Negated character class (`^` inside brackets means NOT). Matches any character except an ampersand (`&`).
+**`+`** — Quantifier meaning "1 or more times". Consumes all non-`&` characters in sequence until hitting the delimiter.
 
 
 
