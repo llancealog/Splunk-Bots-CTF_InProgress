@@ -84,9 +84,15 @@ NOTE: after filtering the query check sample events for the hash info<br><br>
 
 
 <h1>3.2What was the first brute force password used?</h1>
-<h2>ANSWER: 12345678&9d873c2becd118318849d13cf18b60ff=1</h2>
+<h2>ANSWER: 12345678</h2>
 <img width="1898" height="828" alt="image" src="https://github.com/user-attachments/assets/974925c8-551c-497d-b501-ae2b2a28f258" /><br>
 NOTE: filter the query and format data into table similar to 2.3, then filter the time to start from the earliest<br><br>
+
+
+<h1>3.3 What was the correct password found in the brute force attack?</h1>
+<h2>ANSWER: batman</h2>
+<img width="1903" height="814" alt="image" src="https://github.com/user-attachments/assets/081a228a-bbac-4c08-8299-f9c204149819" /><br>
+NOTE: add an additional filter username=* to follow the common form_data format that was done on the login bruteforce attempts, then check near the end of the login attempts identifying a different src_ip and http user agent <br><br>
 
                                           
 
