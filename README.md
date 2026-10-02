@@ -108,10 +108,12 @@ NOTE: to only capture the passwd field we can create a new field or use regex, i
 the syntax follows the | rex field=source_field "(extracted_fieldname[pattern])"<br>
 the source field in this case is the form data where we will extract the passwd, the extracted field name can be the passwd or password, and the pattern is simply how the syntax would be extracted<br>
 *passwd=(the command outside the parentheses which tells splunk to only start extraction after encountering the string of characters "passwd=" ), <br>
-*?(it makes the next character a special character, without the question mark the password would turn to an error instead of a temporary field called password), <br>
-*password(temporary field created to contain the extracted contents in the form data) <br>
-*[^&](^ means to not include, & is the symbol to not include basically stopping extraction before that character), <br>
-*+(means to continue until you hit the character inside the ^)<br><br>
+**Regex Syntax Breakdown (`passwd=(?<password>[^&]+)`):**
+
+- **`passwd=`** — Literal match outside the group that anchors where the extraction begins.
+- **`(?<password>...)`** — Named capture group. The `?` signals an extended regex group, and `<password>` assigns the captured text to a new field named `password`.
+- **`[^&]`** — Negated character class (`^` inside brackets means NOT). Matches any character except an ampersand (`&`).
+- **`+`** — Quantifier meaning "1 or more times". Consumes all non-`&` characters in sequence until hitting the delimiter.
 
 
 
