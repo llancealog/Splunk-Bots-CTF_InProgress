@@ -116,7 +116,7 @@ destination: 192.168.250.70 | 192.168.250.40<br>
 
 <h1>4.1 What was the most likely IP address of we8105desk on 24AUG2016?</h1>
 <h2>ANSWER: 192.168.250.100</h2>
-&bull; include the hostname in the query, then you can check either **'src'** or **`dest`** and map the ip from there, additionally group (aggregate) the data into clean tables to see the corresponding ip <br>
+&bull; include the hostname in the query, then you can check either **`src`** or **`dest`** and map the ip from there, additionally group (aggregate) the data into clean tables to see the corresponding ip <br>
 <img width="1910" height="661" alt="image" src="https://github.com/user-attachments/assets/442a478e-926b-4a63-a7c6-3e8a0a51a541" /><br>
 OR
 <img width="1916" height="375" alt="image" src="https://github.com/user-attachments/assets/5d25a5dd-c4f2-4938-8975-5dec956b0ef1" /><br>
