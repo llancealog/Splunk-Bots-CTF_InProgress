@@ -108,11 +108,19 @@ destination: 192.168.250.70 | 192.168.250.40<br>
 &bull; the syntax follows the | rex field=source_field "(extracted_fieldname[pattern])"<br>
 &bull; the source field in this case is the form data where we will extract the passwd, the extracted field name can be the passwd or password, and the pattern is simply how the syntax would be extracted<br><br>
 &bull; Regex Syntax Breakdown (`passwd=(?<password>[^&]+)`)<br>
-  
 &bull; **`passwd=`**  Literal match outside the group that anchors where the extraction begins. <br>
 &bull; **`(?<password>...)`**  Named capture group. The `?` signals an extended regex group, and `<password>` assigns the captured text to a new field named `password`. <br>
 &bull; **`[^&]`**  Negated character class (`^` inside brackets means NOT). Matches any character except an ampersand (`&`). <br>
-&bull; **`+`**  Quantifier meaning "1 or more times". Consumes all non-`&` characters in sequence until hitting the delimiter. <br>
+&bull; **`+`**  Quantifier meaning "1 or more times". Consumes all non-`&` characters in sequence until hitting the delimiter. <br><br>
+
+
+<h1>4.1 What was the most likely IP address of we8105desk on 24AUG2016?</h1>
+<h2>ANSWER: 192.168.250.100</h2>
+&bull; include the hostname in the query, then you can check either src or dest and map the ip from there, additionally parse the data into clean tables to see the corresponding ip to the src<br>
+<img width="1910" height="661" alt="image" src="https://github.com/user-attachments/assets/442a478e-926b-4a63-a7c6-3e8a0a51a541" /><br>
+OR
+<img width="1916" height="375" alt="image" src="https://github.com/user-attachments/assets/5d25a5dd-c4f2-4938-8975-5dec956b0ef1" /><br>
+&bull; both results show a consistent IP which is 192.168.250.100, and the other IP (127...) is a loopback<br><br>
 
 
 
