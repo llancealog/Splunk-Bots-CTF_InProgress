@@ -142,7 +142,7 @@ OR
 <img width="523" height="39" alt="image" src="https://github.com/user-attachments/assets/a4560a7a-4768-422f-9bb3-848095748fcc" /><br>
 &bull; change the <b><code>event_type</code></b> from alert to dns, and change the time to be near the time that the alert popped<br>
 <img width="595" height="305" alt="image" src="https://github.com/user-attachments/assets/8ed16837-185b-4bbd-b599-5d1d41406828" /><br>
-&bull; now check the <b><code>dns.rrname</code></b> for the suspicious domain<br><br>
+&bull; now check the <b><code>dns.rrname</code></b> (resource record name - basically the domain or host name that is being asked for) for the suspicious domain<br><br>
 
 
 
