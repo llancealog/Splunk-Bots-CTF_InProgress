@@ -145,5 +145,14 @@ OR
 &bull; now check the <b><code>dns.rrname</code></b> (resource record name - basically the domain or host name that is being asked for) for the suspicious domain<br><br>
 
 
+<h1>4.4 What was the first suspicious domain visited by we8105desk on 24AUG2016?</h1>
+<h2>ANSWER: solidaritedeproximite.org</h2>
+<img width="452" height="29" alt="image" src="https://github.com/user-attachments/assets/8fd88870-765c-4f9b-ad4a-0ddd9028a206" /><br>
+&bull; to check the suspicious domain visited by we8105desk we look into <b><code>stream:http</code></b> as the source<br>
+<img width="1649" height="580" alt="image" src="https://github.com/user-attachments/assets/a2cafdb2-c4e3-4a09-b02b-76294301c91d" /><br>
+&bull; then we can aggregate the results into a clean table and adjust the date accordingly to August 24 2016<br><br>
+<img width="1848" height="585" alt="image" src="https://github.com/user-attachments/assets/71e669bb-2cff-431c-8542-9668e3dc4abb" /><br><br>
+
+
 
 
