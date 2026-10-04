@@ -116,11 +116,33 @@ destination: 192.168.250.70 | 192.168.250.40<br>
 
 <h1>4.1 What was the most likely IP address of we8105desk on 24AUG2016?</h1>
 <h2>ANSWER: 192.168.250.100</h2>
-&bull; include the hostname in the query, then you can check either <b><code>src</code></b> or **`dest`** and map the ip from there, additionally group (aggregate) the data into clean tables to see the corresponding ip <br>
+&bull; include the hostname in the query, then you can check either <b><code>src</code></b> or <b><code>dest</code></b> and map the ip from there, additionally group (aggregate) the data into clean tables to see the corresponding ip <br>
 <img width="1910" height="661" alt="image" src="https://github.com/user-attachments/assets/442a478e-926b-4a63-a7c6-3e8a0a51a541" /><br>
 OR
 <img width="1916" height="375" alt="image" src="https://github.com/user-attachments/assets/5d25a5dd-c4f2-4938-8975-5dec956b0ef1" /><br>
 &bull; both results show a consistent IP which is 192.168.250.100, and the other IP (127...) is a loopback<br><br>
+
+
+<h1>4.2Amongst the Suricata signatures that detected the Cerber malware, which one alerted the fewest number of times? Submit ONLY the signature ID value as the answer. (No punctuation, just 7 integers.)</h1>
+<h2>ANSWER: 2816763</h2>
+<img width="393" height="45" alt="image" src="https://github.com/user-attachments/assets/0365be9e-d242-4e18-a70e-69daaa6422ef" /><br>
+&bull; since we are looking for an alert set the event type to alert<br>
+<img width="576" height="41" alt="image" src="https://github.com/user-attachments/assets/be9743f3-f7f9-4050-8ba0-cd0417210825" /><br>
+&bull; check the interesting fields section for the <b><code>alert.signature</code></b> and add the query to filter only showing cerber<br>
+<img width="599" height="329" alt="image" src="https://github.com/user-attachments/assets/57af6a23-b968-4c98-9bfe-d90219bbae5e" /><br>
+&bull; check the fields for the alert that popped the least, then map it to the corresponding signatureid<br>
+<img width="881" height="365" alt="image" src="https://github.com/user-attachments/assets/da784362-1024-4504-9268-1984c466e966" /><br><br>
+
+
+<h1>4.3 What fully qualified domain name (FQDN) does the Cerber ransomware attempt to direct the user to at the end of its encryption phase?</h1>
+<h2>ANSWER: cerberhhyed5frqa.xmfir0.win</h2>
+<img width="1067" height="32" alt="image" src="https://github.com/user-attachments/assets/3913a14b-f51d-4f35-845d-9c922ba8c045" /><br>
+&bull; from the prior query change the <b><code>alert.signature</code></b> to the one with onion domain lookup since we are looking for domain<br>
+&bull; take note of the time the alert was generated and use that in the next step for finding the query involving its dns<br>
+<img width="523" height="39" alt="image" src="https://github.com/user-attachments/assets/a4560a7a-4768-422f-9bb3-848095748fcc" /><br>
+&bull; change the <b><code>event_type</code></b> from alert to dns, and change the time to be near the time that the alert popped<br>
+<img width="595" height="305" alt="image" src="https://github.com/user-attachments/assets/8ed16837-185b-4bbd-b599-5d1d41406828" /><br>
+&bull; now check the <b><code>dns.rrname</code></b> for the suspicious domain<br><br>
 
 
 
