@@ -1,4 +1,4 @@
-# Splunk-Bots-CTF V1
+<img width="1903" height="771" alt="image" src="https://github.com/user-attachments/assets/813c9318-74fe-4306-9462-c2fa63106545" /># Splunk-Bots-CTF V1
 
 <h1>1.1 Find the brand name of the vulnerability scanner.</h1>
 <h2>ANSWER: Acunetix Web Vulnerability Scanner</h2>
@@ -154,5 +154,25 @@ OR
 <img width="1848" height="585" alt="image" src="https://github.com/user-attachments/assets/71e669bb-2cff-431c-8542-9668e3dc4abb" /><br><br>
 
 
+<h1>4.5 During the initial Cerber infection a VB script is run. The entire script from this execution, pre-pended by the name of the launching .exe, can be found in a field in Splunk. What is name of the first function defined in the VB script?</h1>
+<h2>ANSWER: GNbiPpPt5SZ1</h2>
+<img width="1892" height="934" alt="image" src="https://github.com/user-attachments/assets/52f06e96-174a-41b6-8c63-80a41b08e4b6" /><br>
+&bull; then by checking the logs a large block of obsfucated code can be seen in the commandline which is a red flag that should be investigated <br>
+<img width="599" height="986" alt="image" src="https://github.com/user-attachments/assets/493e40d8-ee9e-4d99-a309-8a81597939d8" /><br>
+&bull; in the <b><code>CommandLinee</code></b> field you can see the log with obfuscated code and from you can see the words FuNCtion GNbiPpPt5SZ1
 
+
+<h1>4. 6During the initial Cerber infection a VB script is run. The entire script from this execution, pre-pended by the name of the launching .exe, can be found in a field in Splunk. What is the length in characters of the value of this field?</h1>
+<h2>ANSWER: 4490</h2>
+&bull; still connected to 4.5, we are asked to get the length of the characters in the commandline where the VBS script was ran<br>
+<img width="1891" height="963" alt="image" src="https://github.com/user-attachments/assets/309291c9-86d6-4324-aaa8-d6edeed67dfe" /><br>
+&bull; just use the <b><code>eval</code></b> function along with <b><code>len()</code></b> and the field to get its length<br><br><br>
+
+
+<h1>4.7 What is the name of the USB key inserted by Bob Smith?</h1>
+<h2>ANSWER: </h2>
+<img width="627" height="39" alt="image" src="https://github.com/user-attachments/assets/14820233-1709-4d40-9336-69a672896dc9" /><br>
+&bull; I started with this query to assess the situation, since the standard EventCodes or event ids that shows a device was plugged returned no results I used the USB keyword
+<img width="1604" height="56" alt="image" src="https://github.com/user-attachments/assets/8c169c3f-34e7-4704-8e2e-f91b56b1c9b1" /><br>
+&bull; from the message we found out that there is a USB and the message or logs generated was about the USB not being able to be ejected, but what we found was the device id and not the human readable name
 
