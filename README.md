@@ -174,5 +174,5 @@ OR
 <img width="627" height="39" alt="image" src="https://github.com/user-attachments/assets/14820233-1709-4d40-9336-69a672896dc9" /><br>
 &bull; I started with this query to assess the situation, since the standard EventCodes or event ids that shows a device was plugged returned no results I used the USB keyword
 <img width="1604" height="56" alt="image" src="https://github.com/user-attachments/assets/8c169c3f-34e7-4704-8e2e-f91b56b1c9b1" /><br>
-&bull; from the message we found out that there is a USB and the message or logs generated was about the USB not being able to be ejected, but what we found was the device id and not the human readable name
+&bull; from the message we found out that there is a USB and the message or logs generated was about the USB not being able to be ejected, but what we found was the combination of vendor id (VID), product id (PID) and the device's unique serial number, not the human readable name.
 
