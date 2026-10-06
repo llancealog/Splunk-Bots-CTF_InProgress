@@ -179,7 +179,7 @@ OR
 &bull; add the keyword friendlyname into your query this is similar / the same to device desc in your registry editor<br>
 <img width="757" height="773" alt="image" src="https://github.com/user-attachments/assets/c1598a2a-e618-4d8e-b3df-7e96976573e3" /><br><br>
 <img width="790" height="345" alt="image" src="https://github.com/user-attachments/assets/38f8e4f5-b23b-4681-837d-89de7890cd64" /><br>
-&bull; in my own example it shows xbox controller as the name<br>
+&bull; in my own example it shows xbox 360 controller for windows as the name<br>
 
 
 
