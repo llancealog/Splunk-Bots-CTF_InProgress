@@ -1,4 +1,4 @@
-<img width="1903" height="771" alt="image" src="https://github.com/user-attachments/assets/813c9318-74fe-4306-9462-c2fa63106545" /># Splunk-Bots-CTF V1
+<img width="1205" height="936" alt="image" src="https://github.com/user-attachments/assets/b27fac86-64f7-4a6a-8a3b-e03a0520865f" /><img width="1903" height="771" alt="image" src="https://github.com/user-attachments/assets/813c9318-74fe-4306-9462-c2fa63106545" /># Splunk-Bots-CTF V1
 
 <h1>1.1 Find the brand name of the vulnerability scanner.</h1>
 <h2>ANSWER: Acunetix Web Vulnerability Scanner</h2>
@@ -177,7 +177,39 @@ OR
 &bull; from the message we found out that there is a USB and the message or logs generated was about the USB not being able to be ejected, but what we found was the combination of vendor id (VID), product id (PID) and the device's unique serial number, not the human readable name.<br>
 <img width="385" height="34" alt="image" src="https://github.com/user-attachments/assets/240d680c-f423-4426-b275-90257688e2c4" /><br>
 &bull; add the keyword friendlyname into your query this is similar to device desc in your registry editor, only difference is that friendly name is specifically for storage drives and user-facing peripherals<br>
+<img width="310" height="56" alt="image" src="https://github.com/user-attachments/assets/87db60d0-eede-43a4-bb6e-0fd0b87842e0" /><br>
 
+
+
+<h1>4.8 Bob Smith's workstation (we8105desk) was connected to a file server during the ransomware outbreak. What is the domain name of the file server?</h1>
+<h2>ANSWER: 	we9041srv.waynecorpinc.local</h2>
+<img width="447" height="31" alt="image" src="https://github.com/user-attachments/assets/923570fb-b715-4f19-8b58-498c32e1d41e" /><br>
+&bull; use SMB as source when investigating file servers, with the query add we8105desk's IP as the source<br>
+<img width="588" height="289" alt="image" src="https://github.com/user-attachments/assets/e94e8c1b-6a38-4425-aef7-818547d168ea" /><br>
+&bull; check <b><code>dest_ip</code></b> field, based on volume alone .20 is the most likely culprit, .255 is broadcast which is ignorable, and upon checking .2.50 I found that it didnt have a proper domain / hostname, only something like waynecorpinc.local<br>
+<img width="785" height="32" alt="image" src="https://github.com/user-attachments/assets/5829cfed-d668-4512-92f6-42f13174a929" /><br>
+&bull; proceed with this query adding the <b><code>path</code></b> field to your query (path in smb logs basically shows the hostname/IP along with the directory or file path being accessed)<br>
+<img width="1912" height="677" alt="image" src="https://github.com/user-attachments/assets/088b3579-e110-434c-bffb-09ea9b1f8a43" /><br>
+&bull; cleanly present the data into a tabled format highlighting the relevant field for quick analysis, showing that all fields point to we9041srv<br><br>
+
+
+<h1>4.9 Bob Smith's workstation (we8105desk) was connected to a file server during the ransomware outbreak. What is the IP address of the file server?</h1>
+<h2>ANSWER: 	192.168.250.20</h2>
+<img width="531" height="90" alt="image" src="https://github.com/user-attachments/assets/f6bf402a-2f95-4b12-a986-3719e81a4fd2" /><br>
+&bull; let's say that we didnt decide to specifically check the .20 field, use this query to show you all logs that contains value in the path, then format it cleanly into structured table for analysis<br>
+<img width="1919" height="421" alt="image" src="https://github.com/user-attachments/assets/7fcaa649-5936-4e78-92d3-b793ca8b4c76" /><br>
+&bull; the table allows us to easily map the we9041srv hostname of the server to its corresponding IP address<br><br>
+
+
+<h1>4.10 How many distinct PDFs did the ransomware encrypt on the remote file server?</h1>
+<h2>ANSWER: 	257</h2>
+<img width="486" height="142" alt="image" src="https://github.com/user-attachments/assets/acf5a584-fa7b-468f-9de9-468ee569f1f4" /><br>
+&bull; do a broad query with the information gathered from the question (pdfs & the remote file server)<br>
+<img width="757" height="435" alt="image" src="https://github.com/user-attachments/assets/2ca5bbc6-330e-46eb-8572-64994e514b92" /><br>
+&bull; from the results we could see the <b><code>Relative_Target_Name</code></b> field contains the pdf names so add that to our query<br>
+<img width="877" height="686" alt="image" src="https://github.com/user-attachments/assets/6bd28450-9441-4c6b-9f64-bb33e206640a" /><br>
+&bull; check the <b><code>Accesses</code></b> field for relevant info in this case DELETE is actually important, because in SMB logs it is the final step in the renaming process, where the system is the one that creates the log deleting the old name and replacing it with the new<br>
+&bull; i forgot to mention that attackers / ransomware often renames the file extensions (e.g. .cerber)
 
 
 
