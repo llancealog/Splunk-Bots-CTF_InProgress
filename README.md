@@ -209,7 +209,11 @@ OR
 &bull; from the results we could see the <b><code>Relative_Target_Name</code></b> field contains the pdf names so add that to our query<br>
 <img width="877" height="686" alt="image" src="https://github.com/user-attachments/assets/6bd28450-9441-4c6b-9f64-bb33e206640a" /><br>
 &bull; check the <b><code>Accesses</code></b> field for relevant info in this case DELETE is actually important, because in SMB logs it is the final step in the renaming process, where the system is the one that creates the log deleting the old name and replacing it with the new<br>
-&bull; i forgot to mention that attackers / ransomware often renames the file extensions (e.g. .cerber)
+&bull; i forgot to mention that attackers / ransomware often renames the file extensions (e.g. .cerber)<br>
+<img width="1889" height="874" alt="image" src="https://github.com/user-attachments/assets/975014e9-a2f6-4755-967e-b154ef6a5aac" /><br><br>
 
+
+<h1>4.11 The VBscript found above launches 121214.tmp. What is the ParentProcessId of this initial launch?</h1>
+<h2>ANSWER: 	</h2>
 
 
