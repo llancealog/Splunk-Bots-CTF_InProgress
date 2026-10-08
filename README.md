@@ -241,6 +241,15 @@ OR
 <img width="579" height="79" alt="image" src="https://github.com/user-attachments/assets/e3fc1bf2-5a73-4d66-825e-7ce828466678" /><br>
 &bull; we know check the network traffic to see what bob's workstation downloaded before the ransomware executed. we then filter into clean tabled format sorted by time
 <img width="1897" height="414" alt="image" src="https://github.com/user-attachments/assets/928588e5-4156-427b-8248-c9e41e5ca50b" /><br>
-&bull; showing us the last log downloaded (GET) by bob's workstation before the ransomware executes, which is also a suspicious domain that was noted in a prior question
+&bull; showing us the last log downloaded (GET) by bob's workstation before the ransomware executes, which is also a suspicious domain that was noted in a prior question<br><br>
+
+
+<h1>4.14 Now that you know the name of the ransomware's encryptor file, what obfuscation technique does it likely use?</h1>
+<h2>ANSWER: </h2>
+&bull; based on the logs we found in Splunk, it shows the extension as jpg. so most likely we could classify this as masquerading or extension spoofing, where a file disguises itself as a different type of file by changing its extension<br><br>
+
+
+<h1>GENERAL OVERVIEW MAPPING THE ENTIRE EVENTS (Bob's USB Incident)</h1>
+
 
 
