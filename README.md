@@ -214,6 +214,22 @@ OR
 
 
 <h1>4.11 The VBscript found above launches 121214.tmp. What is the ParentProcessId of this initial launch?</h1>
-<h2>ANSWER: 	</h2>
+<h2>ANSWER:3968</h2>
+<img width="763" height="34" alt="image" src="https://github.com/user-attachments/assets/ac9b3cf0-9876-49b1-b171-86972117ca19" /><br>
+&bull; use this general query adding related keywords <br>
+<img width="592" height="296" alt="image" src="https://github.com/user-attachments/assets/4dfc3af4-9ee0-481f-b7af-87fc49de8786" /><br><br>
+
+
+<h1>4.12 The Cerber ransomware encrypts files located in Bob Smith's Windows profile. How many .txt files does it encrypt?</h1>
+<h2>ANSWER: 406</h2>
+<img width="726" height="28" alt="image" src="https://github.com/user-attachments/assets/5bf6c18b-b4e9-462e-b795-f37495db103f" /><br>
+&bull; do a general search for txt files in bob's machine, check relevant fields for information like <b><code>EventDescription</code></b>, <b><code>TargetFilename</code></b>, <b><code>file_path</code></b><br>
+<img width="597" height="264" alt="image" src="https://github.com/user-attachments/assets/c41a66af-04c8-4e18-9fad-2eca304f3311" /><br>
+&bull; notice File Create Time having majority of the logs, upon researching what it is and viewing from a malicious context, this is highly suspicious as threat actors may change the meta data of files like time, so that it doesnt appear as recently edited. This is an sub-technique called Timestomp that can be mapped with the MIRE ATT&CK framework under the stealth tactics.<br>
+<img width="593" height="605" alt="image" src="https://github.com/user-attachments/assets/dceb03a8-eac0-4a75-9fb3-c5d48cbd3f7f" /><br>
+&bull; file path and target file name has the same contents, showing both the path and the target file. Based on the question, it asks for the encrypted files on bob's windows profile
+
+
+
 
 
