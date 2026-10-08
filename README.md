@@ -227,9 +227,20 @@ OR
 <img width="597" height="264" alt="image" src="https://github.com/user-attachments/assets/c41a66af-04c8-4e18-9fad-2eca304f3311" /><br>
 &bull; notice File Create Time having majority of the logs, upon researching what it is and viewing from a malicious context, this is highly suspicious as threat actors may change the meta data of files like time, so that it doesnt appear as recently edited. This is an sub-technique called Timestomp that can be mapped with the MIRE ATT&CK framework under the stealth tactics.<br>
 <img width="593" height="605" alt="image" src="https://github.com/user-attachments/assets/dceb03a8-eac0-4a75-9fb3-c5d48cbd3f7f" /><br>
-&bull; file path and target file name has the same contents, showing both the path and the target file. Based on the question, it asks for the encrypted files on bob's windows profile
+&bull; file path and target file name has the same contents, showing both the path and the target file. Based on the question, it asks for the encrypted files on bob's windows profile, and in the file path we can see the different text files along with bob's file path, but it also includes others.<br>
+<img width="1107" height="153" alt="image" src="https://github.com/user-attachments/assets/d4f8777b-3c88-47b7-89c0-035189b80441" /><br>
+&bull; in this case we modify the query so it only shows us txt files inside bob's windows profile<br><br>
 
 
-
+<h1>4.13 The malware downloads a file that contains the Cerber ransomware cryptor code. What is the name of that file?</h1>
+<h2>ANSWER: mhtr.jpg</h2>
+<img width="1904" height="660" alt="image" src="https://github.com/user-attachments/assets/391d0e27-1e34-40c0-9ef8-a3fa78929e48" /><br>
+&bull; as we can see from the image the .vbs was created by the malicious code block, and this vb script after a few minutes executed the tmp file at the bottom which is the ransomware<br>
+<img width="643" height="159" alt="image" src="https://github.com/user-attachments/assets/c76f8074-ebf2-4d91-8ed0-24dbe1e6a82b" /><br>
+&bull; for our next query to find the cryptor code (part of the ransomware responsible for locking files) we set the date to all logs prior to the execution of the ransomware.<br>
+<img width="579" height="79" alt="image" src="https://github.com/user-attachments/assets/e3fc1bf2-5a73-4d66-825e-7ce828466678" /><br>
+&bull; we know check the network traffic to see what bob's workstation downloaded before the ransomware executed. we then filter into clean tabled format sorted by time
+<img width="1897" height="414" alt="image" src="https://github.com/user-attachments/assets/928588e5-4156-427b-8248-c9e41e5ca50b" /><br>
+&bull; showing us the last log downloaded (GET) by bob's workstation before the ransomware executes, which is also a suspicious domain that was noted in a prior question
 
 
