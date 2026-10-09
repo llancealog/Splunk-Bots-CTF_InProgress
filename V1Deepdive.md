@@ -23,7 +23,7 @@
 <img width="598" height="278" alt="image" src="https://github.com/user-attachments/assets/492c23a3-25a4-4867-b92c-a0d8373211ce" /><br>
 (Host Layer) Check sysmon if a process actually initiated an outbound network connection to that IP, <b><code>EventDescription</code></b>= Network Connect, or <b><code>EventID</code></b>= 3<br>
 <img width="943" height="135" alt="image" src="https://github.com/user-attachments/assets/04391ed5-e22f-46cb-9c96-618cf642020a" /><br>
-Basically verify network and endpoint logs for the occurrence of the event<br>
+Basically verify network and endpoint logs for the occurrence of the event (In this case we can verify it as a true positive)<br>
 
 
 <br>
