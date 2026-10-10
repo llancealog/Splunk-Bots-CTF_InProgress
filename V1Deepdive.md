@@ -2,6 +2,10 @@
 <img width="550" height="578" alt="image" src="https://github.com/user-attachments/assets/833454e2-29dc-4a7f-9f6b-1c37abbe55f6" /><br>
 <h2>Relevant Info: </h2>
 &bull; we8105desk: 192.168.250.100 (Bob's Workstation)<br>
+&bull; DC: 192.168.250.20
+&bull; Website/WebServer: 192.168.250.70
+&bull; Default Gateway:192.168.250.1
+&bull; Broadcast Address: 192.168.250.255
 
 <h2>01: Preparation (Recommendations)</h2>
 &bull; update playbooks<br>
