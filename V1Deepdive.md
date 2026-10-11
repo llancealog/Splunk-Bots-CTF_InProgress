@@ -39,14 +39,17 @@
 <img width="1914" height="687" alt="image" src="https://github.com/user-attachments/assets/86a53ec9-e0f4-40de-86b3-2861235f4b10" /><br>
 &bull; Let's begin checking <b><code>stream:ip</code></b> as it has the most volume for network traffic<br>
 <img width="1172" height="944" alt="image" src="https://github.com/user-attachments/assets/a91e5b65-8b1d-426b-93aa-d4fe749252e5" /><br>
-&bull; From these info we can validate the alert targeting the entire 85.94.0.0 subnet, which is an IOC that would allow us to classify the alert as a true positive<br>
+&bull; From these info we can validate the alert targeting the entire 85.93.0.0 subnet, which is an IOC that would allow us to classify the alert as a true positive<br>
 &bull; <b><code>ADDITIONAL RESEARCH (but, we can already use the external IP subnet spraying as an IOC)</code></b>
 <img width="963" height="874" alt="image" src="https://github.com/user-attachments/assets/b4224f50-e0bc-4a4d-ba42-427066d23105" /><br>
 &bull; As we could see from an overview of the dest_ip field most of the traffic would probably be from the outbound traffic to the 85.93.0.0 subnet, since we already knew that we could filter that out for our investigation<br>
 <img width="1082" height="873" alt="image" src="https://github.com/user-attachments/assets/51416688-5d76-4305-8eb4-ac92bb5691ce" /><br>
 &bull; This shows us that most of the traffic are happening within the internal network, in this case it was towards the DC, now lets pivot back and check other log sources with more detailed info<br>
 <img width="599" height="508" alt="image" src="https://github.com/user-attachments/assets/80ad37aa-f950-4abd-b94a-d8dc4ab80474" /><br>
-&bull; In this case the next log source for network traffic that generated high volume is from <b><code>stream:smb</code></b>
+&bull; In this case the next log source for network traffic that generated high volume is from <b><code>stream:smb</code></b><br>
+<img width="1703" height="866" alt="image" src="https://github.com/user-attachments/assets/9b9ed557-c3ae-4de3-aa19-00111979f388" /><br>
+&bull; We decided to check the command in the smb logs with the most volume, and from what we could see here it is a strong indicator of high volume automated activity, with the ammount of logs generated and the time between each log being in milliseconds<br>
+
 
 <br>
 <h2>02.2: Discovery & Verification (Root Cause Analysis)</h2>
