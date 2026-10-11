@@ -38,6 +38,9 @@
 &bull; Check the log sources and investigate based on the volume of traffic, prioritize network traffic (<b><code>stream:ip, smb, tcp, etc.</code></b>) first, before host traffic (<b><code>wineventlog, Sysmon, winregistry</code></b>)<br>
 <img width="1914" height="687" alt="image" src="https://github.com/user-attachments/assets/86a53ec9-e0f4-40de-86b3-2861235f4b10" /><br>
 &bull; Let's begin checking <b><code>stream:ip</code></b> as it has the most volume for network traffic<br>
+<img width="1172" height="944" alt="image" src="https://github.com/user-attachments/assets/a91e5b65-8b1d-426b-93aa-d4fe749252e5" /><br>
+&bull; From these info we can validate the alert targeting the entire 85.94.0.0 subnet, which is an IOC that would allow us to classify the alert as a true positive<br>
+&bull; <b><code>ADDITIONAL RESEARCH (but, we can already use the external IP subnet spraying as an IOC)</code></b>
 <img width="963" height="874" alt="image" src="https://github.com/user-attachments/assets/b4224f50-e0bc-4a4d-ba42-427066d23105" /><br>
 &bull; As we could see from an overview of the dest_ip field most of the traffic would probably be from the outbound traffic to the 85.93.0.0 subnet, since we already knew that we could filter that out for our investigation<br>
 <img width="1082" height="873" alt="image" src="https://github.com/user-attachments/assets/51416688-5d76-4305-8eb4-ac92bb5691ce" /><br>
