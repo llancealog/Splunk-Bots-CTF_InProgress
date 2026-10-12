@@ -49,7 +49,7 @@
 &bull; In this case the next log source for network traffic that generated high volume is from <b><code>stream:smb</code></b><br>
 <img width="1703" height="866" alt="image" src="https://github.com/user-attachments/assets/9b9ed557-c3ae-4de3-aa19-00111979f388" /><br>
 &bull; We decided to check the command in the smb logs with the most volume, and from what we could see here it is a strong indicator of high volume automated activity, with the ammount of logs generated and the time between each log being in milliseconds<br>
-
+5. Create an incident report for escalation after verifying the alert is a true positive. Check the incident-reports named <b><code>V1: C2 Checkin</code></b> for a sample
 
 <br>
 <h2>02.2: Discovery & Verification (Root Cause Analysis)</h2>
