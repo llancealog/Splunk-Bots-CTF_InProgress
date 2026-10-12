@@ -15,35 +15,29 @@ On `2016-08-24 09:49:24.542` workstation `we8105desk` (`192.168.250.100`) trigge
 | Time (UTC) | Source / Layer | Event Description |
 | :--- | :--- | :--- |
 | **09:49:24** | Suricata IDS | Alert triggered: `ETPRO TROJAN Ransomware/Cerber Checkin 2` (SID: `2816763`). |
-| **09:49:24** | Sysmon (EID 3) | `osk.exe` spawned from `AppData\Roaming\{GUID}\` initiates network connections. |
-| **09:49:25** | Network (`stream:ip`) | Outbound UDP spray commences targeting external subnet `85.93.0.0/16`. |
+| **09:49:24** | Network (`stream:ip`) | Outbound UDP spray commences targeting external subnet `85.93.0.0/16`. |
 | **09:49:52** | Network (`stream:smb`) | Automated millisecond-interval `smb2 create` commands target DC shares (`192.168.250.20`). |
-| **[Triage Time]** | SIEM Scoping | Confirmed no other internal enterprise endpoints communicated with `85.93.0.0/16`. |
-| **[Handoff Time]** | SOC Tier 1 | Host isolation requested; ticket escalated to Tier 2 / DFIR. |
 
 ---
 
 ## 3. Evidence & Corroboration
 
 ### A. Network C2 Activity (`stream:ip`)
-The compromised host initiated high-volume UDP bursts across external destination IP block `85.93.0.0/16` on non-standard ports (e.g., `6892`).
+The compromised host initiated high-volume automated UDP traffic across external destination IP `85.93.0.0/16` 
 ```spl
-index="botsv1" src_ip="192.168.250.100" sourcetype="stream:ip" dest_ip="85.93.*"
-| stats count by dest_ip, dest_port, transport
+index="botsv1" (host="we8105desk" OR src_ip="192.168.250.100" OR src="192.168.250.100") sourcetype="stream:ip" dest_ip="85.93.*"
+| table _time dest_ip dest_port protocol
 ```
-*Result: Over 47,000 events matching automated C2 spray behavior.*
+*Result: Over 47,000 events matching automated behavior such as millisecond intervals between multiple events.*
 
-### B. Endpoint Process Validation (Sysmon)
-Sysmon EventCode 3 (`Network Connect`) confirmed the process initiating outbound connections was masquerading as the Windows On-Screen Keyboard from an abnormal path:
-* **Path:** `C:\Users\bob.smith.WAYNECORPINC\AppData\Roaming\{35ACA89F-933F-6A5D-2776-A3589FB99832}\osk.exe`
-
-### C. Lateral Movement & Share Impact (`stream:smb`)
-High-frequency SMBv2 requests directed at the Domain Controller (`192.168.250.20`):
+### B. Lateral Movement & Share Impact (`stream:smb`)
+High-frequency SMB requests directed at the Domain Controller (`192.168.250.20`):
 ```spl
-index="botsv1" src_ip="192.168.250.100" dest_ip="192.168.250.20" sourcetype="stream:smb" command="smb2 create"
-| table _time, filename, command, src_ip, dest_ip
+index="botsv1" (host="we8105desk" OR src_ip="192.168.250.100" OR src="192.168.250.100") sourcetype="stream:smb" dest_ip="192.168.250.20" "command{}"="*" filename=*
+| sort _time
+| table _time filename command{} src_ip dest_ip
 ```
-*Result: Millisecond-frequency handle creation targeting network shares, indicating automated traversal.*
+*Result: Millisecond intervals between `smb2 create` events, indicating automated activity.*
 
 ---
 
