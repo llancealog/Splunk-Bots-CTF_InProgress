@@ -6,7 +6,7 @@ Incident Report: IR-2016-0824 Ransomware Check-in & Lateral Spread
 ---
 
 ## 1. Executive Summary
-On `2016-08-24 09:49:24 UTC`, workstation `we8105desk` (`192.168.250.100`) triggered an IDS alert for Cerber ransomware C2 check-in. Triage confirmed outbound UDP beaconing across external subnet `85.93.0.0/16` initiated by a disguised binary (`osk.exe`) in user AppData. Subsequent lateral SMB activity showed rapid file manipulation attempts against the internal Domain Controller (`192.168.250.20`). The host was prioritized for network isolation and escalated to Tier 2 / Incident Response.
+On `2016-08-24 09:49:24.542` workstation `we8105desk` (`192.168.250.100`) triggered a Suricata alert with the signature ETPRO TROJAN Ransomware/Cerber Checkin 2. Initial triage verifies the contents of the alert, where the workstation can be seen reaching out to each IP within the `85.93.0.0` subnet via UDP. Further investigation after the alert also shows high volume of automated activity from SMB logs targeted towards the Domain Controller (`192.168.250.20`) coming from the workstation at `2016-08-24 09:49:52.315.` Host isolation has been requested and the issue is to be escalated to Tier 2 / Incident Response.
 
 ---
 
