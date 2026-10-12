@@ -60,8 +60,8 @@
 
 <img width="1172" height="944" alt="image" src="https://github.com/user-attachments/assets/a91e5b65-8b1d-426b-93aa-d4fe749252e5" />
 
-- From this info we can validate the alert targeting the entire `85.93.0.0/16` subnet, which is an IOC that would allow us to classify the alert as a true positive
-- `ADDITIONAL RESEARCH (but, we can already use the external IP subnet spraying as an IOC)`
+- From this info we can validate the alert targeting the entire `85.93.0.0/16` subnet, which is an IOA that would allow us to classify the alert as a true positive
+- `ADDITIONAL RESEARCH (but, we can already use the external IP subnet spraying as an IOA)`
 
 <img width="963" height="874" alt="image" src="https://github.com/user-attachments/assets/b4224f50-e0bc-4a4d-ba42-427066d23105" />
 
