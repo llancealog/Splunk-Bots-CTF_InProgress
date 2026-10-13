@@ -46,19 +46,17 @@ index="botsv1" (host="we8105desk" OR src_ip="192.168.250.100" OR src="192.168.25
 | Type | Indicator | Context |
 | :--- | :--- | :--- |
 | **Internal Host** | `we8105desk` (`192.168.250.100`) | Patient Zero |
-| **External Subnet** | `85.93.0.0/16` (UDP) | C2 Destination Subnet |
-| **Malicious Binary** | `osk.exe` | Masqueraded executable in user `AppData` |
-| **Internal Target** | `192.168.250.20:445` | Targeted DC / SMB Shares |
+| **External Subnet** | `85.93.0.0/16` (UDP) | C2 Checkin Destination Subnet |
+| **Internal Target** | `192.168.250.20:445` | Domain Controller & its SMB Shares |
 
 ---
 
 ## 5. Verdict & Next Steps
 
-* **Verdict:** **True Positive** — Suspected Active Ransomware / Lateral Propagation.
+* **Verdict:** **True Positive** — C2 Checkin Alert Confirmed / Suspected Active Ransomware .
 * **Actions Taken:** 
   * Requested immediate network isolation of `we8105desk`.
   * Verified enterprise scope (no other infected internal hosts observed).
 * **Recommended Next Steps (Tier 2 / IR):**
-  1. Inspect network shares on `192.168.250.20` for modified or encrypted files.
-  2. Perform Root Cause Analysis (RCA) on `we8105desk` (review web proxy, DNS, and email delivery prior to `09:49 UTC`) to identify initial entry vector.
-  3. Extract payload hash from `we8105desk` disk image for submission to threat intelligence and perimeter blocking.
+  * Inspect network shares on `192.168.250.20` for modified or encrypted files.
+  * Perform Root Cause Analysis (RCA) on `we8105desk` (prior to `09:49 UTC`) to identify initial entry vector and malicious payload.
