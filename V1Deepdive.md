@@ -80,11 +80,32 @@
 - We decided to check the command in the SMB logs with the most volume, and from what we could see here it is a strong indicator of high-volume automated activity, with the amount of logs generated and the time between each log being in milliseconds
 
 ### 5. Create an incident report for escalation after verifying the alert is a true positive
-Check the incident reports named `V1: C2 Checkin` for a sample.
+- Check the incident reports named `V1: C2 Checkin` for a sample.
 
 ---
 
 ## 02.2: Discovery & Verification (Root Cause Analysis)
+### 1. Backtrack from your alert prioritize Host traffic like `Sysmon`
+
+<img width="1288" height="42" alt="image" src="https://github.com/user-attachments/assets/bc3a26ed-5cc2-4782-af6e-7252305d6e81" />
+
+- Query your logs based on the info from the alert and investigate the earliest log
+- Make sure to use `EventCode` 3 as it signifies Network Connect logs
+
+<img width="935" height="36" alt="image" src="https://github.com/user-attachments/assets/38f9f720-6e27-4201-8b58-da661b415db1" />
+
+- Check the fields in the earlies logs and find the `Image` field, since its the full system path of the executable that triggered the event
+
+<img width="882" height="89" alt="image" src="https://github.com/user-attachments/assets/62954971-e301-4cae-a671-57e74cd81c9b" />
+
+- Also take note of `ProcessId` or `ProcessGuid` as it is a unique identifier for the process that executed leading to the creation of those 40,000+ logs / network traffic
+- Preferrably note `ProcessGuid` since `ProcessId` maybe recycled by Windows overtime
+
+<img width="1680" height="65" alt="image" src="https://github.com/user-attachments/assets/5cff47cd-3d5c-495c-8304-5bdd7dfd8f8c" />
+
+- Now, look for the origin of that image by adding both the `image` and `EventCode` 1 (event id that shows the image and what launched it) to the query
+
+
 
 ---
 
