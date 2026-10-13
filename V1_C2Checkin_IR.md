@@ -23,7 +23,7 @@ On `2016-08-24 09:49:24.542` workstation `we8105desk` (`192.168.250.100`) trigge
 ## 3. Evidence & Corroboration
 
 ### A. Network C2 Activity (`stream:ip`)
-The compromised host initiated high-volume automated UDP traffic across external destination IP `85.93.0.0/16` 
+The compromised host initiated high-volume automated UDP traffic targeting an external subnet `85.93.0.0/16` 
 ```spl
 index="botsv1" (host="we8105desk" OR src_ip="192.168.250.100" OR src="192.168.250.100") sourcetype="stream:ip" dest_ip="85.93.*"
 | table _time dest_ip dest_port protocol
