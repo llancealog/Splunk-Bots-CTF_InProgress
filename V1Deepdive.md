@@ -1,4 +1,4 @@
-# GENERAL OVERVIEW & IR Lifecycle (Bob's USB Incident)
+<img width="1624" height="770" alt="image" src="https://github.com/user-attachments/assets/227e00ab-1646-4501-84b2-7e46455a1fbb" /># GENERAL OVERVIEW & IR Lifecycle (Bob's USB Incident)
 
 <img width="550" height="578" alt="image" src="https://github.com/user-attachments/assets/833454e2-29dc-4a7f-9f6b-1c37abbe55f6" />
 
@@ -101,9 +101,16 @@
 - Also take note of `ProcessId` or `ProcessGuid` as it is a unique identifier for the process that executed leading to the creation of those 40,000+ logs / network traffic
 - Preferrably note `ProcessGuid` since `ProcessId` maybe recycled by Windows overtime
 
-<img width="1680" height="65" alt="image" src="https://github.com/user-attachments/assets/5cff47cd-3d5c-495c-8304-5bdd7dfd8f8c" />
+<img width="1694" height="183" alt="image" src="https://github.com/user-attachments/assets/2e15e893-da9b-4789-a2ef-ef71ea800c88" />
 
 - Now, look for the origin of that image by adding both the `image` and `EventCode` 1 (event id that shows the image and what launched it) to the query
+- The query will show us 4 events that are all suspicious and needs investigation, but for this case  since our goal is to find the root cause we need to filter it by time and prioritize the first event
+
+<img width="1624" height="770" alt="image" src="https://github.com/user-attachments/assets/3cde1b8a-ec8b-42f1-9dce-9a69139c4758" />
+
+- This is the first then find the `ParentCommandLine` as it tells us what command was used to create this process
+- Also note other relevant info 
+
 
 
 
