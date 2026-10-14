@@ -109,7 +109,16 @@
 <img width="1624" height="770" alt="image" src="https://github.com/user-attachments/assets/3cde1b8a-ec8b-42f1-9dce-9a69139c4758" />
 
 - This is the first then find the `ParentCommandLine` as it tells us what command was used to create this process
-- Also note other relevant info 
+- Also note other relevant info
+  * `Time`:8/24/16 9:48:41.000 AM
+  * `IntegrityLevel`: Medium
+  * `Image`: C:\Users\bob.smith.WAYNECORPINC\AppData\Roaming\{35ACA89F-933F-6A5D-2776-A3589FB99832}\osk.exe
+  * `ParentImage`: C:\Users\bob.smith.WAYNECORPINC\AppData\Roaming\121214.tmp
+  * `CommandLine`: "C:\Users\bob.smith.WAYNECORPINC\AppData\Roaming\{35ACA89F-933F-6A5D-2776-A3589FB99832}\osk.exe"
+  * `ParentCommandLine`: "C:\Users\bob.smith.WAYNECORPINC\AppData\Roaming\121214.tmp"
+  * `ProcessId | ProcessGuid`: 	3836 | {0F2D76F0-CFE9-57BD-0000-0010B4F63400}
+  * `ParentProcessId | ParentProcessGuid`: 	3828 | {0F2D76F0-CFDD-57BD-0000-001069CF3400}
+  * Hash(`SHA256` or `MD5`):	37397F8D8E4B3731749094D7B7CD2CF56CACB12DD69E0131F07DD78DFF6F262B or 	EE0828A4E4C195D97313BFC7D4B531F1
 
 
 
