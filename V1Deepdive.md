@@ -110,7 +110,7 @@
 
 - This is the first then find the `ParentCommandLine` as it tells us what command was used to create this process
 - Also note other relevant info
-  * `Time`:8/24/16 9:48:41.000 AM
+  * `Time`: 8/24/16 9:48:41.000 AM
   * `IntegrityLevel`: Medium
   * `Image`: C:\Users\bob.smith.WAYNECORPINC\AppData\Roaming\{35ACA89F-933F-6A5D-2776-A3589FB99832}\osk.exe
   * `ParentImage`: C:\Users\bob.smith.WAYNECORPINC\AppData\Roaming\121214.tmp
@@ -118,10 +118,40 @@
   * `ParentCommandLine`: "C:\Users\bob.smith.WAYNECORPINC\AppData\Roaming\121214.tmp"
   * `ProcessId | ProcessGuid`: 	3836 | {0F2D76F0-CFE9-57BD-0000-0010B4F63400}
   * `ParentProcessId | ParentProcessGuid`: 	3828 | {0F2D76F0-CFDD-57BD-0000-001069CF3400}
-  * Hash(`SHA256` or `MD5`):	37397F8D8E4B3731749094D7B7CD2CF56CACB12DD69E0131F07DD78DFF6F262B or 	EE0828A4E4C195D97313BFC7D4B531F1
+  * Hash(`SHA256` or `MD5`):	37397F8D8E4B3731749094D7B7CD2CF56CACB12DD69E0131F07DD78DFF6F262B or EE0828A4E4C195D97313BFC7D4B531F1
 
+<img width="1657" height="162" alt="image" src="https://github.com/user-attachments/assets/a0106b9d-f21f-4bbd-a234-20a9dc482d6c" />
 
+- Update the query to involve the previous `ParentCommandLine` as the `CommandLine` and note relevant information
 
+<img width="1622" height="465" alt="image" src="https://github.com/user-attachments/assets/78687e1c-c7bd-41af-9d80-f81f670a1a8c" />
+
+ - Again take note of relevant info, also take note of the parent command line where we could see `/C START` which indicates automated execution, normally if a user ran or executed the process manually it would just be `C:\Windows\System32\cmd.exe`
+  * `Time`: 8/24/16 9:48:21.000 AM
+  * `IntegrityLevel`: Medium
+  * `Image`: C:\Users\bob.smith.WAYNECORPINC\AppData\Roaming\121214.tmp
+  * `ParentImage`: C:\Windows\SysWOW64\cmd.exe
+  * `CommandLine`: 	"C:\Users\bob.smith.WAYNECORPINC\AppData\Roaming\121214.tmp"
+  * `ParentCommandLine`: "C:\Windows\System32\cmd.exe" /C START "" "C:\Users\bob.smith.WAYNECORPINC\AppData\Roaming\121214.tmp"
+  * `ProcessId | ProcessGuid`: 2948 |	{0F2D76F0-CFD5-57BD-0000-00108BB43400}
+  * `ParentProcessId | ParentProcessGuid`: 1476 | {0F2D76F0-CFD5-57BD-0000-0010E3AC3400}
+  * Hash(`SHA256` or `MD5`):	37397F8D8E4B3731749094D7B7CD2CF56CACB12DD69E0131F07DD78DFF6F262B or EE0828A4E4C195D97313BFC7D4B531F1
+
+<img width="1522" height="50" alt="image" src="https://github.com/user-attachments/assets/1674eecb-945b-49cc-ae8d-5d6e7c0c21ee" />
+
+- Proceed with the same approach to backtrack the process
+
+<img width="1621" height="220" alt="image" src="https://github.com/user-attachments/assets/586a5429-3808-4454-b127-6e94f0c2d700" />
+
+   * `Time`: 8/24/16 9:48:21.000 AM
+   * `IntegrityLevel`: Medium
+   * `Image`: C:\Users\bob.smith.WAYNECORPINC\AppData\Roaming\121214.tmp
+   * `ParentImage`: C:\Windows\SysWOW64\cmd.exe
+   * `CommandLine`: 	"C:\Users\bob.smith.WAYNECORPINC\AppData\Roaming\121214.tmp"
+   * `ParentCommandLine`: "C:\Windows\System32\cmd.exe" /C START "" "C:\Users\bob.smith.WAYNECORPINC\AppData\Roaming\121214.tmp"
+   * `ProcessId | ProcessGuid`: 2948 |	{0F2D76F0-CFD5-57BD-0000-00108BB43400}
+   * `ParentProcessId | ParentProcessGuid`: 1476 | {0F2D76F0-CFD5-57BD-0000-0010E3AC3400}
+   * Hash(`SHA256` or `MD5`):	37397F8D8E4B3731749094D7B7CD2CF56CACB12DD69E0131F07DD78DFF6F262B or EE0828A4E4C195D97313BFC7D4B531F1
 
 ---
 
