@@ -1,4 +1,4 @@
-# V1: C2 Checkin
+# V1: C2 Checkin Alert
 Incident Report: IR-2016-0824 Ransomware Check-in & Lateral Spread
 
 **Severity:** High | **Status:** For Escalation | **Analyst:** Lance Alog
