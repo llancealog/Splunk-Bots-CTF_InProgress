@@ -140,7 +140,7 @@
  
 <img width="1588" height="655" alt="image" src="https://github.com/user-attachments/assets/6e226997-af12-43b1-b789-8c8d5a798671" />
 
-- Additional commands like `/f` or `/n` are an indicator of automation but along when running with a .dotm file it is highly suspicious and is often an indicator of attack
+- Additional commands like `/f` or `/n` when ran with a .dotm file is highly suspicious and is often an indicator of attack
    * `Time`: 8/24/16 9:43:21.000 AM
    * `Image`: 	C:\Windows\SysWOW64\cmd.exe
    * `ParentImage`: C:\Program Files (x86)\Microsoft Office\Office14\WINWORD.EXE
@@ -151,6 +151,7 @@
 
 - A `.dotm` extension signifies a word file that has a hidden script or macro that executes when a specific trigger occurs (often times the trigger is when opened)
 - From what we can see at the `ParentCommandLine` it shows Explorer.EXE which is the primary indicator for user initiated activity, so most likely the user opened the word file, which then began to execute automated scripts
+- Lastly take note of the `CommandLine` where the `.dotm` file was located which was the `D:\` indicating it was opened directly from an external drive
    * `Time`: 8/24/16 9:43:12.000 AM
    * `Image`: C:\Program Files (x86)\Microsoft Office\Office14\WINWORD.EXE
    * `ParentImage`: C:\Windows\explorer.exe
