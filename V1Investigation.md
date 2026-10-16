@@ -1,7 +1,5 @@
 <img width="1624" height="770" alt="image" src="https://github.com/user-attachments/assets/227e00ab-1646-4501-84b2-7e46455a1fbb" /># GENERAL OVERVIEW & IR Lifecycle (Bob's USB Incident)
 
-<img width="550" height="578" alt="image" src="https://github.com/user-attachments/assets/833454e2-29dc-4a7f-9f6b-1c37abbe55f6" />
-
 ## Relevant Info:
 - we8105desk: 192.168.250.100 (Bob's Workstation)
 - DC: 192.168.250.20
@@ -9,14 +7,7 @@
 - Default Gateway: 192.168.250.1
 - Broadcast Address: 192.168.250.255
 
-## 01: Preparation (Recommendations)
-- Update playbooks
-- Assign team roles & responsibilities
-- Setup tools EDR, IDS, forwarders
-- Prepare and train employees in events of an incident
-- Document baselines for normal network and asset standards
-
-## 02.1: Discovery & Verification (Following Leads)
+## Discovery & Verification (Following Leads)
 
 <img width="1771" height="191" alt="image" src="https://github.com/user-attachments/assets/5588f1a1-a411-45ec-9665-31580036f2cc" />
 
@@ -84,7 +75,7 @@
 
 ---
 
-## 02.2: Discovery & Verification (Root Cause Analysis)
+## Discovery & Verification (Root Cause Analysis)
 ### 1. Backtrack from your alert prioritize Host traffic like `Sysmon`
 
 <img width="1288" height="42" alt="image" src="https://github.com/user-attachments/assets/bc3a26ed-5cc2-4782-af6e-7252305d6e81" />
@@ -155,5 +146,3 @@
 
 ---
 
-## 03: Containment & Continuity (Recommendations)
-- Realistically in this scenario we would want to isolate `192.168.250.100`, basically cutting it off from the network.
