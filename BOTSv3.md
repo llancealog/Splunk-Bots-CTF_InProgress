@@ -2,5 +2,8 @@
 
 ### Answer: bstoll,btun,splunk_access,web_admin
 
-When investigating AWS activity in a SIEM tool, `aws:cloudtrail` is a go-to log source for intial context, it logs important information about the event such as the who, what, where, and when
+- When investigating AWS activity in a SIEM tool, `aws:cloudtrail` is a go-to log source for initial context, it logs important information about the event such as the who, what, where, and when
 
+<img width="321" height="38" alt="image" src="https://github.com/user-attachments/assets/224b89f6-e516-434a-908f-691e8da590ac" />
+
+- Within the  `aws:cloudtrail` logs the `userIdentity.type` field is used to check 
