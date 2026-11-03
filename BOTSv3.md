@@ -67,6 +67,19 @@
 <img width="867" height="25" alt="image" src="https://github.com/user-attachments/assets/90ddb1c3-d010-475a-9397-51ef89179519" />
 
 
+## 204: What is the name of the S3 bucket that was made publicly accessible?
+
+### Answer: frothlywebcode
+
+- it can be found in the same log as the previous question with the field `requestParameters.bucketName`
+
+<img width="723" height="24" alt="image" src="https://github.com/user-attachments/assets/aa257349-ff01-4cea-bcc1-80c208823e8d" />
+
+
+## 205: What is the name of the text file that was successfully uploaded into the S3 bucket while it was publicly accessible?
+
+### Answer: 
+
 
 
 
