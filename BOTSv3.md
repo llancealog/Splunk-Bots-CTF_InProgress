@@ -6,4 +6,4 @@
 
 <img width="321" height="38" alt="image" src="https://github.com/user-attachments/assets/224b89f6-e516-434a-908f-691e8da590ac" />
 
-- Within the  `aws:cloudtrail` logs the `userIdentity.type` field is used to check 
+- Within the  `aws:cloudtrail` logs the `userIdentity.type` field is used to check whether the action was made by a user account, temporary role, root user (suspicious and should trigger an alert, rarely used for everyday operations), code, or an aws service.
