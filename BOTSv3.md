@@ -136,3 +136,6 @@
 - based on the logs we can see that there is a much more suspicious activity where a sequence of chrome processes can be seen all reaching 100% CPU usage
 - leading us to the answer `chrome#5`
 
+---
+
+
