@@ -138,4 +138,25 @@
 
 ---
 
+## 209: When a Frothly web server EC2 instance is launched via auto scaling, it performs automated configuration tasks after the instance starts. How many packages and dependent packages are installed by the cloud initialization script? Provide the number of installed packages then number of dependent packages, comma separated without spaces.
+
+### Answer: 7, 13
+
+- use `cloud-init-output` as the sourcetype, this is basically the logs of EC2 instance during its first initialization
+- this one is a bit difficult to find due to the lack of TA fields, but searching the keyword "`dependent packages`" can easily cut down the noise. using "packages" as the keyword also works but youd have to look and scroll through terminal logs of each event
+
+<img width="1200" height="500" alt="image" src="https://github.com/user-attachments/assets/09fe2d4f-ab19-4a9a-bccf-6483708e4f59" />
+
+---
+
+## 210: What is the short hostname of the only Frothly endpoint to actually mine Monero cryptocurrency? (Example: ahamilton instead of ahamilton.mycompany.com)   
+
+### Answer: 
+
+
+
+
+
+
+
 
