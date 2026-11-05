@@ -14,6 +14,7 @@
 
 <img width="1265" height="375" alt="image" src="https://github.com/user-attachments/assets/d905a760-d24c-4ba4-b4d5-bd58f0852d78" />
 
+---
 
 ## 201: What field would you use to alert that AWS API activity have occurred without MFA (multi-factor authentication)?
 
@@ -22,6 +23,7 @@
 - `userIdentity.sessionContext.attributes.mfaAuthenticated` this field is important to gain context on the login, but remember to also check `eventType` field to identify what type of event was logged
 - normally if the `eventType` is console login not passing a MFA is a high risk and would most likely be a policy issue to be updated immediately. if the action was done by code or was logged as an AWS API Call in the event type it depends on the organization's policy, by default AWS API calls do not require MFA but it will be required if the organization has an explicit IAM policy that enforces MFA even for API calls. lastly are automated AWS services which is normal to appear as false or even missing entirely for MFA logs.
 
+---
   
 ## 202: What is the processor number used on the web servers?
 
@@ -33,6 +35,7 @@
 
 - we can see the processor being  Intel(R) Xeon(R) CPU E5-2676 v3 @ 2.40GHz
 
+---
 
 ## 203: Bud accidentally makes an S3 bucket publicly accessible. What is the event ID of the API call that enabled public access?
 
@@ -66,6 +69,7 @@
 
 <img width="867" height="25" alt="image" src="https://github.com/user-attachments/assets/90ddb1c3-d010-475a-9397-51ef89179519" />
 
+---
 
 ## 204: What is the name of the S3 bucket that was made publicly accessible?
 
@@ -75,20 +79,60 @@
 
 <img width="723" height="24" alt="image" src="https://github.com/user-attachments/assets/aa257349-ff01-4cea-bcc1-80c208823e8d" />
 
+---
 
 ## 205: What is the name of the text file that was successfully uploaded into the S3 bucket while it was publicly accessible?
 
-### Answer: 
+### Answer: OPEN_BUCKET_PLEASE_FIX.txt
 
+- I originally tried checking `aws:cloudtrail` for logs that involve .txt or .docx but it seems that cloudtrail drops anonymous uploads though it can log anonymous management events like creating, editing, or deleting buckets
+- with this in mind we proceed with a different sourcetype, since we're trying to find a file uploaded on the S3 bucket we checl `aws:s3:accesslogs`
 
+<img width="608" height="133" alt="image" src="https://github.com/user-attachments/assets/57456631-6dd6-4a4e-bc7a-20a18a79a66c" />
 
+- with this query we found 3 logs all with the exact same txt filename, and the earliest log was uploaded just a minute after the bucket was set to public (9:01:46.000)
 
+<img width="1532" height="74" alt="image" src="https://github.com/user-attachments/assets/87a5fe8c-5ed0-45af-849e-e973475134c3" />
 
+---
 
+## 206: What is the size (in megabytes) of the .tar.gz file that was successfully uploaded into the S3 bucket while it was publicly accessible? (Answer guidance: Round to two decimal places without the unit of measure. Use 1024 for the byte conversion. Use a period as the radix character.)
 
+### Answer: 2.93 Mb
 
+<img width="510" height="32" alt="image" src="https://github.com/user-attachments/assets/a9333698-a6b8-4802-b78e-6e7062519f25" />
 
+- we can use this query to find logs that involve `tar.gz`
+- but to further narrow down the results we'd want to set the http_method to PUT since the question says uploaded
 
+<img width="664" height="110" alt="image" src="https://github.com/user-attachments/assets/498ff2dc-83a5-4d7e-b612-690dcff2103e" />
 
+<img width="1533" height="117" alt="image" src="https://github.com/user-attachments/assets/741f0e3f-8f03-473e-b171-d436210bbe09" />
 
+- we'd want to check the log that happened around the same time that the S3 bucket was made public
+
+<img width="266" height="27" alt="image" src="https://github.com/user-attachments/assets/df03214b-de10-4374-a6fa-71b21f994ca1" />
+
+- its object size shows 3076532 in bytes, according to the instruction we convert it using the 1024 method, we'd want to do it twice to get the mb
+- 3076532 bytes --> 3004.43 kilobytes --> 2.93 megabytes
+
+---
+
+## 208: A Frothly endpoint exhibits signs of coin mining activity. What is the name of the first process to reach 100 percent CPU processor utilization time from this activity on this endpoint? (Answer guidance: Include any special characters/punctuation.)
+
+### Answer: chrome#5
+
+- we need to check the sourcetype `perfmonmk:process` because it tracks the resource utilization of individual applications into events
+
+<img width="326" height="47" alt="image" src="https://github.com/user-attachments/assets/ee35831c-4d19-479a-b207-e2b8061239ce" />
+
+- then we check for other relevant fields, where we can find `process_cpu_used_percent` so we add that to the query so Splunk only shows us processes that reached 100 percent cpu usage
+
+<img width="535" height="46" alt="image" src="https://github.com/user-attachments/assets/5ed05a8d-f162-4df3-8902-c5e600cdd7f7" />
+
+<img width="1535" height="804" alt="image" src="https://github.com/user-attachments/assets/95f06629-1ac6-478f-8ed1-59e108d6278a" />
+
+- from these logs we can say that `MicrosoftEdgeCP#2` was the first process to cap the CPU at 100 percent but it seems that it was due to a different reason and not crypto mining
+- based on the logs we can see that there is a much more suspicious activity where a sequence of chrome processes can be seen all reaching 100% CPU usage
+- leading us to the answer `chrome#5`
 
