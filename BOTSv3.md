@@ -167,7 +167,7 @@
 
 <img width="875" height="853" alt="image" src="https://github.com/user-attachments/assets/6be01f76-5419-44ea-938b-6f44137d49ac" />
 
-- by checking the `message_type` QUERY we could see that all those logs only had one host which was BSTOLL-L, which is most likely the host to have the cryptomining activity
+- by checking the `message_type` QUERY we could see that all those logs only had one host which was BSTOLL-L, which is most likely the host to have the cryptomining activity considering the fact that it's `perfmonk:process` CPU usage was at 100%
 
   <img width="880" height="498" alt="image" src="https://github.com/user-attachments/assets/627eb7a3-e13d-4101-9490-5c134a03bfe1" />
 
