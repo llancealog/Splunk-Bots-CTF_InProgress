@@ -85,7 +85,7 @@
 
 ### Answer: OPEN_BUCKET_PLEASE_FIX.txt
 
-- I originally tried checking `aws:cloudtrail` for logs that involve .txt or .docx but it seems that cloudtrail drops anonymous uploads though it can log anonymous management events like creating, editing, or deleting buckets
+- I originally tried checking `aws:cloudtrail` for logs that involve .txt or .docx but it seems that cloudtrail does not log anonymous uploads though it can log anonymous management events like creating, editing, or deleting buckets
 - with this in mind we proceed with a different sourcetype, since we're trying to find a file uploaded on the S3 bucket we checl `aws:s3:accesslogs`
 
 <img width="608" height="133" alt="image" src="https://github.com/user-attachments/assets/57456631-6dd6-4a4e-bc7a-20a18a79a66c" />
